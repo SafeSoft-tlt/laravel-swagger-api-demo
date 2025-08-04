@@ -96,6 +96,13 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## 🛠 Установка и запуск
 
+> ⚠️ **Если после клонирования или composer install возникают ошибки, связанные с отсутствием папок или правами на запись (например, /var/www/bootstrap/cache directory must be present and writable), выполните:**
+> 
+> ```sh
+> mkdir -p bootstrap/cache storage/framework/{cache,sessions,views}
+> chmod -R 777 bootstrap/cache storage
+> ```
+
 ### Требования
 - Docker
 - Docker Compose
