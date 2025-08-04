@@ -1,0 +1,133 @@
+{
+  "info": {
+    "name": "Laravel Organizations API",
+    "description": "REST API для справочника организаций",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000",
+      "type": "string"
+    },
+    {
+      "key": "api_key",
+      "value": "test-api-key-123",
+      "type": "string"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "X-API-KEY",
+        "value": "{{api_key}}",
+        "type": "string"
+      }
+    ]
+  },
+  "item": [
+    {
+      "name": "Organizations",
+      "item": [
+        {
+          "name": "Get organizations by building",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/organizations/building/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "organizations", "building", "1"]
+            }
+          }
+        },
+        {
+          "name": "Get organizations by activity",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/organizations/activity/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "organizations", "activity", "1"]
+            }
+          }
+        },
+        {
+          "name": "Get organizations by radius",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/organizations/radius?latitude=55.7558&longitude=37.6176&radius=1000",
+              "host": ["{{base_url}}"],
+              "path": ["api", "organizations", "radius"],
+              "query": [
+                {
+                  "key": "latitude",
+                  "value": "55.7558"
+                },
+                {
+                  "key": "longitude",
+                  "value": "37.6176"
+                },
+                {
+                  "key": "radius",
+                  "value": "1000"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get organization by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/organizations/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "organizations", "1"]
+            }
+          }
+        },
+        {
+          "name": "Search organizations by name",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/organizations/search?name=мясной",
+              "host": ["{{base_url}}"],
+              "path": ["api", "organizations", "search"],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "мясной"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Buildings",
+      "item": [
+        {
+          "name": "Get all buildings",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/buildings",
+              "host": ["{{base_url}}"],
+              "path": ["api", "buildings"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+} 
