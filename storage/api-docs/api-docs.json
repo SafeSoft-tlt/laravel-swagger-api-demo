@@ -1,8 +1,8 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Organizations API",
-        "description": "REST API for organizations directory",
+        "title": "Laravel Swagger API Demo",
+        "description": "Laravel REST API demo with API key authentication and Swagger documentation",
         "version": "1.0.0"
     },
     "paths": {

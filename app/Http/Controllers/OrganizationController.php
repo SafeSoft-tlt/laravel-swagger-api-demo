@@ -17,9 +17,9 @@ use OpenApi\Annotations as OA;
 
 /**
  * @OA\Info(
- *     title="Organizations API",
+ *     title="Laravel Swagger API Demo",
  *     version="1.0.0",
- *     description="REST API for organizations directory"
+ *     description="Laravel REST API demo with API key authentication and Swagger documentation"
  * )
  * 
  * @OA\SecurityScheme(
