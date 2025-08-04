@@ -277,4 +277,49 @@ class OrganizationController extends Controller
         
         return response()->json($buildings);
     }
+
+    /**
+     * @OA\Get(
+     *     path="/api/buildings/coordinates",
+     *     summary="Get all buildings with coordinates for testing",
+     *     tags={"Buildings"},
+     *     security={{"api_key":{}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="List of all buildings with coordinates for radius search testing",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(
+     *                 property="message",
+     *                 type="string",
+     *                 example="Use these coordinates for testing radius search"
+     *             ),
+     *             @OA\Property(
+     *                 property="buildings",
+     *                 type="array",
+     *                 @OA\Items(
+     *                     type="object",
+     *                     @OA\Property(property="id", type="integer", example=1),
+     *                     @OA\Property(property="address", type="string", example="ул. Тверская, д. 1"),
+     *                     @OA\Property(property="latitude", type="number", format="float", example=55.755800),
+     *                     @OA\Property(property="longitude", type="number", format="float", example=37.617600)
+     *                 )
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=401,
+     *         description="Unauthorized - API key required"
+     *     )
+     * )
+     */
+    public function getBuildingsWithCoordinates(): JsonResponse
+    {
+        $buildings = $this->organizationService->getBuildingsWithCoordinates();
+        
+        return response()->json([
+            'message' => 'Use these coordinates for testing radius search',
+            'buildings' => $buildings
+        ]);
+    }
 } 

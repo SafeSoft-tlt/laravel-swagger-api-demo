@@ -98,4 +98,12 @@ class OrganizationService
         // TODO: Implement logic to get all buildings
         return \App\Models\Building::with('organizations')->get();
     }
+
+    /**
+     * Get all buildings with coordinates for testing
+     */
+    public function getBuildingsWithCoordinates(): Collection
+    {
+        return \App\Models\Building::select('id', 'address', 'latitude', 'longitude')->get();
+    }
 } 

@@ -285,6 +285,67 @@
                     }
                 ]
             }
+        },
+        "/api/buildings/coordinates": {
+            "get": {
+                "tags": [
+                    "Buildings"
+                ],
+                "summary": "Get all buildings with coordinates for testing",
+                "operationId": "83538d01029c9001483c508efa7dc6af",
+                "responses": {
+                    "200": {
+                        "description": "List of all buildings with coordinates for radius search testing",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Use these coordinates for testing radius search"
+                                        },
+                                        "buildings": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": 1
+                                                    },
+                                                    "address": {
+                                                        "type": "string",
+                                                        "example": "ул. Тверская, д. 1"
+                                                    },
+                                                    "latitude": {
+                                                        "type": "number",
+                                                        "format": "float",
+                                                        "example": 55.7558
+                                                    },
+                                                    "longitude": {
+                                                        "type": "number",
+                                                        "format": "float",
+                                                        "example": 37.6176
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized - API key required"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
         }
     },
     "components": {

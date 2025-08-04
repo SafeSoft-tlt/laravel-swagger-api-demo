@@ -32,6 +32,7 @@ Route::middleware('api.key')->group(function () {
     
     // Buildings routes
     Route::get('/buildings', [OrganizationController::class, 'getBuildings']);
+    Route::get('/buildings/coordinates', [OrganizationController::class, 'getBuildingsWithCoordinates']);
     
     // Test route without Form Request
     Route::get('/test', function () {
