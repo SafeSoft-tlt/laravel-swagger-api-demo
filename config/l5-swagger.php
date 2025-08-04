@@ -7,7 +7,7 @@ return [
     'documentations' => [
         'default' => [
             'api' => [
-                'title' => 'Organizations API Documentation',
+                'title' => 'Laravel Swagger API Demo',
             ],
             'routes' => [
                 'api' => 'api/documentation',

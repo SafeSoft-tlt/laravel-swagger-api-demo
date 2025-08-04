@@ -60,9 +60,9 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
-# Laravel Organizations API
+# Laravel Swagger API Demo
 
-REST API для работы с организациями, зданиями и деятельностью. API защищен API ключами и включает полную документацию Swagger.
+Демонстрационный проект Laravel с REST API, защищенным API ключами и полной документацией Swagger/OpenAPI. Включает примеры работы с организациями, зданиями и деятельностью.
 
 ## 🚀 Возможности
 
