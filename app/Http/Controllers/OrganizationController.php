@@ -224,14 +224,9 @@ class OrganizationController extends Controller
      *     )
      * )
      */
-    public function searchByName(Request $request): JsonResponse
+    public function searchByName(SearchOrganizationsByNameRequest $request): JsonResponse
     {
-        $name = $request->query('name');
-        if (!$name) {
-            return response()->json(['error' => 'Name parameter is required'], 422);
-        }
-        
-        $organizations = $this->organizationService->searchByName($name);
+        $organizations = $this->organizationService->searchByName($request->name);
         
         return response()->json($organizations);
     }
