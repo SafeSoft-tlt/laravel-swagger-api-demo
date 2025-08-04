@@ -194,25 +194,7 @@ class OrganizationController extends Controller
         return response()->json($organization);
     }
     
-    public function getByIdSimple(Request $request): JsonResponse
-    {
-        $id = (int) $request->route('id');
-        $organization = $this->organizationService->getById($id);
-        
-        return response()->json($organization);
-    }
-    
-    public function searchByNameSimple(Request $request): JsonResponse
-    {
-        $name = $request->query('name');
-        if (!$name) {
-            return response()->json(['error' => 'Name parameter is required'], 422);
-        }
-        
-        $organizations = $this->organizationService->searchByName($name);
-        
-        return response()->json($organizations);
-    }
+
 
     /**
      * @OA\Get(

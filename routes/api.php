@@ -39,9 +39,5 @@ Route::middleware('api.key')->group(function () {
         return response()->json(['message' => 'API is working!']);
     });
     
-    // Test route for organization without Form Request
-    Route::get('/organizations-simple/{id}', [OrganizationController::class, 'getByIdSimple']);
-    
-    // Test route for search without Form Request
-    Route::get('/organizations-search-simple', [OrganizationController::class, 'searchByNameSimple']);
+
 }); 
